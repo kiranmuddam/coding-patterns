@@ -1,4 +1,9 @@
 # Coding Patterns Implementations and Exercies
+
+##### Author : Kiran Babu Muddam 
+
+##### LinkedIn Profile : [https://www.linkedin.com/in/kiranbabumuddam/](https://www.linkedin.com/in/kiranbabumuddam/)
+
 ## Pattern 1 : Sliding-Window-Pattern
 
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Tag          | Note| 
