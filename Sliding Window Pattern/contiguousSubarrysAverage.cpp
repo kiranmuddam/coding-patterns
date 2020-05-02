@@ -12,18 +12,22 @@
 #include<vector>
 using namespace std;
 int main(){
-    vector<int> intArray,avgArray;
+    vector<int> intArray;
+    vector<double> avgArray;
     int k=5;
     //Populating array with 1-10 integers
     for(int i=1;i<=10;i++){ 
-        intArray.push_back(i);
+        intArray.push_back((i));
     }
     for(int i=0;i+k<=intArray.size();i++){
-        int counter=0,subarrayAvg=0;
+        int counter=0;
+        double subarraySum=0;
+        double subarrayAvg;
         for(int j=i;counter<5;j++){
-            subarrayAvg=subarrayAvg+intArray[j];
+            subarraySum=subarraySum+intArray[j];
             counter=counter+1;
         }
+        subarrayAvg = subarraySum/5;
         avgArray.push_back(subarrayAvg);
     }
     cout<<"The Array with contiguous subarrays averages:"<<endl;
