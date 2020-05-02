@@ -23,22 +23,31 @@ Space Complexity - O(n)
 #include<vector>
 using namespace std;
 int main(){
-    vector<int> intArray,avgArray;
+    vector<int> intArray;
     int k=5;
+    int maxSubarraySum =0,firstIndex=-1,lastIndex=-1;
     //Populating array with 1-10 integers
     for(int i=1;i<=10;i++){ 
-        intArray.push_back(i);
+        intArray.push_back((i));
     }
     for(int i=0;i+k<=intArray.size();i++){
-        int counter=0,subarrayAvg=0;
+        int counter=0;
+        int subarraySum=0;
         for(int j=i;counter<5;j++){
-            subarrayAvg=subarrayAvg+intArray[j];
+            subarraySum=subarraySum+intArray[j];
             counter=counter+1;
         }
-        avgArray.push_back(subarrayAvg);
+        if(subarraySum>maxSubarraySum){
+            maxSubarraySum = subarraySum;
+            firstIndex = i;
+            lastIndex = i+k;
+        }
     }
-    cout<<"The Array with contiguous subarrays averages:"<<endl;
-    for(int i=0;i<avgArray.size();i++){
-        cout<<avgArray[i]<<" ";
+    vector<int>::const_iterator first = intArray.begin() + firstIndex;
+    vector<int>::const_iterator last = intArray.begin() + lastIndex;
+    vector<int> maxSumSubArray(first, last);
+    cout<<"The subarray with max sum is :"<<endl;
+    for(int i=0;i<maxSumSubArray.size();i++){
+        cout<<maxSumSubArray[i]<<" ";
     }
 }
