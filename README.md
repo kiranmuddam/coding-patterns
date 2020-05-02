@@ -1,5 +1,5 @@
 # Coding Patterns Implementations and Exercies
-Pattern 1 : Sliding-Window-Pattern
+## Pattern 1 : Sliding-Window-Pattern
 
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Tag          | Note| 
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|-----|
