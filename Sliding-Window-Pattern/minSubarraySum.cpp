@@ -21,12 +21,35 @@ Input: [3, 4, 1, 1, 6], S=8
 Output: 3
 Explanation: Smallest subarrays with a sum greater than or equal to '8' are [3, 4, 1] or [1, 1, 6].
 
-Time Complexity : 
-Space Complexity :
+Time Complexity : O(N+N)
+Space Complexity : O(1)
  * 
  */
 #include<iostream>
+#include<vector>
+#include<limits.h>
 using namespace std;
+class minSubarraySum{
+    public:
+    int findMinSubarraySum(vector<int> inputVector,int inputSum){
+        int windowStart=0,windowEnd=0,arraySum=0,minSumSubarraySize=INT_MAX;
+        for(int i=windowStart;i<inputVector.size();i++){
+            arraySum=arraySum+inputVector[i];
+            windowEnd = i;
+            while(arraySum>=inputSum){
+                minSumSubarraySize=min(minSumSubarraySize,windowEnd-windowStart+1);
+                arraySum=arraySum-inputVector[windowStart];
+                windowStart=windowStart+1;
+            }
+        }
+        return minSumSubarraySize;
+    }
+};
 int main(){
-    cout<<"All is well"<<endl;
+    minSubarraySum solution;
+    cout<<solution.findMinSubarraySum({1,5,6,1,6,3,5,3,7},7)<<endl;
+    cout<<solution.findMinSubarraySum({1,5,6,1,6,3,5,3},7)<<endl;
+    cout<<solution.findMinSubarraySum({1,1,2,1,1,1},7)<<endl;
+    cout<<solution.findMinSubarraySum({3,4,1,1,6},8)<<endl;
+
 }
