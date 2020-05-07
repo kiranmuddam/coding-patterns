@@ -1,4 +1,4 @@
-# Coding Patterns Implementations and Exercies
+# Coding Patterns Implementations and Exercises
 
 ##### Author : Kiran Babu Muddam 
 
