@@ -19,8 +19,8 @@ Example 3:
 Input: String="cbbebi", K=3
 Output: 5
 Explanation: The longest substrings with no more than '3' distinct characters are "cbbeb" & "bbebi".
-Time Complexity : 
-Space Complexity : 
+Time Complexity : O(n+n)
+Space Complexity : O(K+1)
  * 
  */
 #include<iostream>
@@ -30,43 +30,28 @@ using namespace std;
 class LongestSubstringKDistinct{
     public:
     int findLongestSubstringKDistinct(string inputString,int inputK){
-        unordered_map<char,int> visited;
-        int windowStart=0,windowEnd=0,longestSubstringSize=0,currentSubstringSize=0;
-        int currentUniqueSubstringSize=0;
-        for(int windowEnd=0;windowEnd<inputString.size();windowEnd++){
-            if(visited.find(inputString[windowEnd])==visited.end()){
-                ++currentSubstringSize;
-                ++currentUniqueSubstringSize;
-                visited[inputString[windowEnd]]=1;
-                //cout<<visited[inputString[windowEnd]]<<endl;
+        unordered_map<char,int> charFrequencyMap;
+        int windowStart=0,windowEnd=0,maxLength=0;
+        for(windowEnd=0;windowEnd<inputString.size();++windowEnd){
+            char rightCharacter= inputString[windowEnd];
+            charFrequencyMap[rightCharacter]++;
+            while(charFrequencyMap.size()>inputK){
+                char leftCharacter = inputString[windowStart];
+                charFrequencyMap[leftCharacter]--;
+                if(charFrequencyMap[leftCharacter]==0){
+                    charFrequencyMap.erase(leftCharacter);
                 }
-            else{
-                ++currentSubstringSize;
-                visited[inputString[windowEnd]]=visited[inputString[windowEnd]]+1;
-                }
-            while(currentUniqueSubstringSize>inputK){
-                longestSubstringSize = max(longestSubstringSize,currentSubstringSize-1);
-                if((visited[inputString[windowStart]]) > 1){
-                    --currentSubstringSize;
-                    visited[inputString[windowStart]]=visited[inputString[windowStart]]-1;
-
-                }
-                else{
-                    --currentSubstringSize;
-                    --currentUniqueSubstringSize;
-                }
-                ++windowStart;
+                windowStart++;
             }
-            longestSubstringSize = max(longestSubstringSize,currentSubstringSize);
-
+            maxLength = max(maxLength,windowEnd-windowStart + 1);
         }
-        return longestSubstringSize;
+        return maxLength;
     }
 };
 int main(){
     LongestSubstringKDistinct solution;
-    //cout<<solution.findLongestSubstringKDistinct("aaraci",2)<<endl;
-    //cout<<solution.findLongestSubstringKDistinct("aaaasdwwwewasd",7)<<endl;
+    cout<<solution.findLongestSubstringKDistinct("aaraci",2)<<endl;
+    cout<<solution.findLongestSubstringKDistinct("aaaasdwwwewasd",7)<<endl;
     cout<<solution.findLongestSubstringKDistinct("sooslabcdsooow",3)<<endl;
 
 }
