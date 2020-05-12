@@ -21,8 +21,8 @@ Input: String="abccde"
 Output: 3
 Explanation: Longest substrings without any repeating characters are "abc" & "cde".
 
-Time Complexity : 
-Spacec complexity:
+Time Complexity : O(n)
+Spacec complexity: O(n)
  */
 #include<iostream>
 #include<string>
