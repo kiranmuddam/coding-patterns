@@ -15,3 +15,4 @@
 5 | Smallest subarray with given sum | [C++](./Sliding-Window-Pattern/InputSumMinSubarray.cpp)  | _O(n)_       | _O(1)_          | Easy         |||
 6 | Longest Substring with K Distinct Characters | [C++](./Sliding-Window-Pattern/LongestSubstringKDistinct.cpp)  | _O(n)_       | _O(K)_          | Medium         | Hashmap,c++||
 7 |  Fruits into Baskets | [C++](./Sliding-Window-Pattern/addFruitsToBaskets.cpp)  | _O(n)_       | _O(K)_          | Medium         | Hashmap,c++||
+8 | No-repeat Substring | [C++](./Sliding-Window-Pattern/LongestUniqueSubstring.cpp)  | _O(n)_       | _O(n)_          | Hard         | Hashmap,c++||
