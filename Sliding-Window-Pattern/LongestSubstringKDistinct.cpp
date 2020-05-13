@@ -53,5 +53,4 @@ int main(){
     cout<<solution.findLongestSubstringKDistinct("aaraci",2)<<endl;
     cout<<solution.findLongestSubstringKDistinct("aaaasdwwwewasd",7)<<endl;
     cout<<solution.findLongestSubstringKDistinct("sooslabcdsooow",3)<<endl;
-
 }

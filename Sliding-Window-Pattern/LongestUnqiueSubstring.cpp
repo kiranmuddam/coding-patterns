@@ -58,4 +58,5 @@ int main(){
     cout<<myString.findLongesetDistinctSubsting("abccde")<<endl;
     cout<<myString.findLongesetDistinctSubsting("abcdabcdefghijklabcdesllsqwertyuioop")<<endl;
     cout<<myString.findLongesetDistinctSubsting("abccde")<<endl;
+    cout<<myString.findLongesetDistinctSubsting("abcdabcdqwertyiopallzxcvbnm")<<endl;
 }
