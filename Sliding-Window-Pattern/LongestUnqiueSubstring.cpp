@@ -39,10 +39,14 @@ class LongestDistinctSubstring{
                 charFrequencyMap[currentChar]=windowEnd;
                 ++currentWindowLength;
             }
-            else if(charFrequencyMap[currentChar] and (windowEnd-charFrequencyMap[currentChar] < currentWindowLength)){
+            else if(charFrequencyMap[currentChar] and (charFrequencyMap[currentChar] >= windowEnd-currentWindowLength)){
                 maxStringLength = max(maxStringLength, currentWindowLength);
                 currentWindowLength = windowEnd - charFrequencyMap[currentChar];
                 charFrequencyMap[currentChar]=windowEnd;
+            }
+            else if(charFrequencyMap[currentChar] and (charFrequencyMap[currentChar] < windowEnd-currentWindowLength)){
+                charFrequencyMap[currentChar] = windowEnd;
+                currentWindowLength++;
             }
         }
         maxStringLength = max(maxStringLength, currentWindowLength);
@@ -59,4 +63,5 @@ int main(){
     cout<<myString.findLongesetDistinctSubsting("abcdabcdefghijklabcdesllsqwertyuioop")<<endl;
     cout<<myString.findLongesetDistinctSubsting("abccde")<<endl;
     cout<<myString.findLongesetDistinctSubsting("abcdabcdqwertyiopallzxcvbnm")<<endl;
+    cout<<myString.findLongesetDistinctSubsting("aarchiarionpqabcdiopq")<<endl;
 }
