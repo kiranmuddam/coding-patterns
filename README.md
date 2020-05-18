@@ -17,3 +17,4 @@
 7 |  Fruits into Baskets | [C++](./Sliding-Window-Pattern/addFruitsToBaskets.cpp)  | _O(n)_       | _O(K)_          | Medium         | Hashmap,c++||
 8 | No-repeat Substring | [C++](./Sliding-Window-Pattern/LongestUniqueSubstring.cpp)  | _O(n)_       | _O(n)_          | Hard         | Hashmap,c++||
 9 | Longest Substring with Same Letters after Replacement | [C++](./Sliding-Window-Pattern/charReplacement.cpp)  | _O(n)_       | _O(n)_          | Hard         | Hashmap,c++||
+10 | Longest Subarray with Ones after Replacement | [C++](./Sliding-Window-Pattern/replaceOnes.cpp)  | _O(n)_       | _O(1)_          | Hard         | Hashmap,c++||

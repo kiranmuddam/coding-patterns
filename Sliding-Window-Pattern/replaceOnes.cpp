@@ -16,8 +16,8 @@ Input: Array=[0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1], k=3
 Output: 9
 Explanation: Replace the '0' at index 6, 9, and 10 to have the longest contiguous subarray of 1s having length 9.
 
-Time Complexity:
-Space Complexity:
+Time Complexity: O(n)
+Space Complexity: O(1)
  */
 #include<iostream>
 #include<vector>
