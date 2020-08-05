@@ -36,7 +36,7 @@ class addFruitsToBaskets{
         for(windowEnd=0;windowEnd<inputFruits.size();++windowEnd){
             char rightChar = inputFruits[windowEnd];
             fruitFrequencyMap[rightChar]++;
-        while(fruitFrequencyMap.size()>2){
+        while((int)fruitFrequencyMap.size()>2){
             char leftChar = inputFruits[windowStart];
             fruitFrequencyMap[leftChar]--;
             if(fruitFrequencyMap[leftChar]==0){
